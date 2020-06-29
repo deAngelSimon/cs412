@@ -1,0 +1,15 @@
+// takes a string as its input and
+// returns a new string that contains all of the
+// letters in the original string,
+// but in alphabebetical order
+
+// Here is the function
+const alphabeticalOrder = (string) => {
+    let array = string.split('').sort().join('');
+    return array;
+}
+
+// We want to export the function
+
+module.exports = {alphabeticalOrder};
+

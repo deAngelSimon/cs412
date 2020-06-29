@@ -1,0 +1,48 @@
+
+const runna = (string, currentFunc) => {
+    return currentFunc(string);
+}
+
+const runna1 = (string) => {
+    let array = string.split('c');
+    for (let i = 0; i< array.length; i++){
+        if(i !== 0){
+            array[i] = 'c' + array[i]
+        }
+    }
+    return array;
+}
+
+
+const runna2 = (string) => {
+
+    let originalString = string;
+    let length = string.length;
+    let numberReplaced = 0;
+    let modifiedString = string.replace(/a/g, 'A');
+    // Calculate the number of changes and change a to A
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] == 'a'){
+            numberReplaced++;
+        }
+    }
+    //Make an object
+    const makeObject = (originalString, modifiedString, numberReplaced, length) => {
+        var object = {
+            originalString: originalString,
+            modifiedString: modifiedString,
+            numberReplaced: numberReplaced,
+            length: length,
+        };
+        return object
+    }
+    return makeObject(originalString,modifiedString, numberReplaced, length);
+}
+
+// Here we export the function and the 2 helpers
+module.exports = {
+    runna: runna,
+    runna1: runna1,
+    runna2: runna2,
+};
+

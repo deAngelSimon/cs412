@@ -1,0 +1,76 @@
+const {describe, it} = require('mocha'); //MOCHAJS.ORG
+const{expect} = require('chai'); //chaijs.com
+
+//Suites
+// Lets import all of the functions to test them
+const {alphabeticalOrder} = require('./PS1.P1')
+const evaluate = require('./PS1.P2')
+const {runna, runna1, runna2} = require('./PS1.P3')
+
+
+describe('High level Testing for PS1', () => {
+
+    let string1 = 'alphabeticalOrder';
+    let string2 = 'supercalifragilisticexpialidocious';
+    let string3 = 'Simon and Perry are friends';
+
+    // Problem 1 Testing
+    it('should return Oaaabcdeehillprrt for input of alphabeticalOrder ', function (){
+        let alpha1 = alphabeticalOrder(string1);
+        expect(alpha1).to.be.equal('Oaaabcdeehillprrt')
+    });
+    it('should return aaacccdeefgiiiiiiillloopprrssstuux for input of alphabeticalOrder ', function (){
+        let alpha2 = alphabeticalOrder(string2);
+        expect(alpha2).to.be.equal('aaacccdeefgiiiiiiillloopprrssstuux')
+    });
+    it('should return a string for input of alphabeticalOrder ', function (){
+        let alpha3 = alphabeticalOrder(string3);
+        expect(alpha3).to.be.a('string')
+    });
+
+    //Problem 2 Testing
+    it('should show that it is a function ', function (){
+        let expression = '2*3';
+        let result = evaluate.evaluate(expression);
+        expect(result).to.be.a('function')
+    });
+    it('should return 10 when expression = 10*1 ', function (){
+        let expression = '10*1'
+        let result = evaluate(expression)();
+        expect(result).to.be.equal(10)
+    });
+    it('should return 9 when expression = 4+5', function (){
+        let result = evaluate('4+5')();
+        expect(result).to.be.equal(9)
+    });
+
+    // Problem 3
+    // Lambda Function 1
+    it('should return [‘super’, ‘califragilisti’, ‘cexpialido’, ‘cious’] for the input supercalifragilisticexpialidocious', function () {
+        let result = runna('supercalifragilisticexpialidocious', runna1);
+        expect(result).to.be.a('array');
+    });
+    it('should return [‘cauli’, ‘curr’ ] for the input caulicurr', function () {
+        let result = runna('caulicurr', runna1);
+        expect(result).to.be.a('array');
+    });
+    it('should return an array even if there is no cs', function () {
+        let result = runna('Perry and Simon are friends', runna1);
+        expect(result).to.be.a('array');
+    });
+
+ // Part 3 Lambda Function 2
+    it('should return an object for any input ', function () {
+        let result = runna('supercalifragilisticexpialidocious', runna2);
+        expect(result).to.be.a('object');
+    });
+    it('originalString  =  supercalifragilisticexpialidocious when input is supercalifragilisticexpialidocious', function () {
+        let result = runna('supercalifragilisticexpialidocious', runna2);
+        expect(result.originalString).to.be.equal('supercalifragilisticexpialidocious');
+    });
+    it('should return an object with the property modified  string for the input supercalifragilisticexpialidocious', function () {
+        let result = runna('supercalifragilisticexpialidocious', runna2);
+        expect(result).to.have.property('originalString');
+    });
+
+})
