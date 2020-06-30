@@ -24,7 +24,8 @@ router.route('/current')
 
         let dataObj = await result.json();
         let todayData = dataObj[dataObj.length - 1];
-        res.render('responseHTML', {cases: todayData.Cases});
+    // Used path to render the right EJS file to avoid mixing it up with index in the public folder
+        res.render('../views/index', {cases: todayData.Cases});
     })
 module.exports = router;
 
