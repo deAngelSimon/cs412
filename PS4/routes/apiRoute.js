@@ -24,7 +24,7 @@ router.route('/current')
 
         let dataObj = await result.json();
         let todayData = dataObj[dataObj.length - 1];
-        res.render('index', {cases: todayData.Cases});
+        res.render('responseHTML', {cases: todayData.Cases});
     })
 module.exports = router;
 
