@@ -6,7 +6,7 @@
 //   WINS: string;
 //   RANK: number;
 // }
-
+// Now simulates API JSON Object
 export class DAY {
   Country: string;
   Confirmed: number;
