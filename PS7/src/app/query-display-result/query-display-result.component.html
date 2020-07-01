@@ -1,0 +1,27 @@
+
+<div name="details" *ngIf="queryData">
+  These are the stats for {{queryData[0].Country}}
+  <ul *ngFor="let element of queryData ">
+
+    <li>This number of confirmed cases: {{element.Confirmed}} </li>
+    <li>This number of deaths {{element.Deaths}} </li>
+    <li>This number of Recovered {{element.Recovered}} </li>
+  </ul>
+
+
+</div>
+
+<!--{-->
+<!--"Country": "South Africa",-->
+<!--"CountryCode": "ZA",-->
+<!--"Province": "",-->
+<!--"City": "",-->
+<!--"CityCode": "",-->
+<!--"Lat": "-30.56",-->
+<!--"Lon": "22.94",-->
+<!--"Confirmed": 5951,-->
+<!--"Deaths": 116,-->
+<!--"Recovered": 2382,-->
+<!--"Active": 3453,-->
+<!--"Date": "2020-05-01T00:00:00Z"-->
+<!--},-->

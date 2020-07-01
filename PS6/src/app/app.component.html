@@ -1,0 +1,14 @@
+
+
+<div name="outerList">
+  <ul *ngFor="let beast of D1">
+
+    <li (click)="showInfo(beast.Name)">{{beast.Name}} </li>
+
+  </ul>
+</div>
+
+<div name="details" *ngIf="selectedPlayer">
+  <input name="lastName" type="text" value="{{selectedPlayer.WINS}}">
+
+</div>

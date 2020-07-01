@@ -1,0 +1,11 @@
+
+<form>
+
+  <input type = "text" required= "true" minlength="1" [(ngModel)]= "Country" name = "Country" >
+  <button (click) = "GetQueryData()" > Query Button </button>
+
+</form>
+
+<app-query-display-result [queryData] = "currentQueryData">
+
+</app-query-display-result>
