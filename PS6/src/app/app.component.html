@@ -1,14 +1,15 @@
 
 
 <div name="outerList">
+  Click a Date and you will see the Number of confirmed Cases in South Africa
   <ul *ngFor="let beast of D1">
 
-    <li (click)="showInfo(beast.Name)">{{beast.Name}} </li>
+    <li (click)="showInfo(beast.Date)">{{beast.Date}} </li>
 
   </ul>
 </div>
 
-<div name="details" *ngIf="selectedPlayer">
-  <input name="lastName" type="text" value="{{selectedPlayer.WINS}}">
+<div name="details" *ngIf="selectedDay">
+  <input name="lastName" type="text" value="{{selectedDay.Confirmed}}">
 
 </div>

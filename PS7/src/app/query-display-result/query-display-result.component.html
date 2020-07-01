@@ -2,7 +2,7 @@
 <div name="details" *ngIf="queryData">
   These are the stats for {{queryData[0].Country}}
   <ul *ngFor="let element of queryData ">
-
+<!--      Display confirmed, Deaths and recovered for everyday-->
     <li>This number of confirmed cases: {{element.Confirmed}} </li>
     <li>This number of deaths {{element.Deaths}} </li>
     <li>This number of Recovered {{element.Recovered}} </li>

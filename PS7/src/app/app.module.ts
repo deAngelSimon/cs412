@@ -14,6 +14,7 @@ import {APIService} from './sharedFolder/app.service';
     QueryComponent,
     QueryDisplayResultComponent
   ],
+  // Had to import HttpClientmodule
   imports: [
     BrowserModule,
     FormsModule,
